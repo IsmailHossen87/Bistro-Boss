@@ -4,14 +4,16 @@ import SwiperPagination from "./Swiper";
 import PopularMenu from "./PopularMenu";
 import Featured from "./Featured";
 import Testimonials from "./Testimonials";
-import Banner2 from "./Banner2";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title>Bistro Boss || Home</title>
+      </Helmet>
       <Banner></Banner>
       <SwiperPagination></SwiperPagination>
-      <Banner2></Banner2>
       <PopularMenu></PopularMenu>
       {/* tumi banaba ekta bg image er upor ekta card */}
       <Featured></Featured>
