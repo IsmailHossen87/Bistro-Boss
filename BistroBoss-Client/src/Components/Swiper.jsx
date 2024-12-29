@@ -26,19 +26,19 @@ const SwiperPagination = () => {
         className="mySwiper"
       >
         <SwiperSlide><img src={slide1} alt="" />
-        <p className="text-white text-4xl text-center uppercase -mt-16 pb-7 mr-16">Salad</p>
+        <p className="text-white md:text-4xl text-center uppercase -mt-16 pb-7 mr-16">Salad</p>
         </SwiperSlide>
         <SwiperSlide><img src={slide2} alt="" />
-        <p className="text-white text-4xl text-center uppercase -mt-16 pb-7 mr-16">Soop</p>
+        <p className="text-white md:text-4xl text-center uppercase -mt-16 pb-7 mr-16">Soop</p>
         </SwiperSlide>
         <SwiperSlide><img src={slide3} alt="" />
-        <p className="text-white text-4xl text-center uppercase -mt-16 pb-7 mr-16">Pizza</p>
+        <p className="text-white md:text-4xl text-center uppercase -mt-16 pb-7 mr-16">Pizza</p>
         </SwiperSlide>
         <SwiperSlide><img src={slide4} alt="" />
-        <p className="text-white text-4xl text-center uppercase -mt-16 pb-7 mr-16">Dissest</p>
+        <p className="text-white md:text-4xl text-center uppercase -mt-16 pb-7 mr-16">Dissest</p>
         </SwiperSlide>
         <SwiperSlide><img src={slide5} alt="" />
-        <p className="text-white text-4xl text-center uppercase -mt-16 pb-7 mr-16">Salad</p>
+        <p className="text-white md:text-4xl text-center uppercase -mt-16 pb-7 mr-16">Salad</p>
         </SwiperSlide>
 
       </Swiper>

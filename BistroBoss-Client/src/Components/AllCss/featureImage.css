@@ -2,3 +2,12 @@
     background-image: url('../../assets/home/featured.jpg');
     opacity: 90%;
 }
+.bannerImage {
+    background-image: url('../../assets/home/chef-service.jpg');
+    background-size: cover;
+    background-position: center; 
+    height: 80vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}

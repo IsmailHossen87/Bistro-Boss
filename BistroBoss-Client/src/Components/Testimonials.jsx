@@ -25,7 +25,7 @@ const Testimonials = () => {
           <div>
             {review?.map((reviews) => (
               <SwiperSlide  key={reviews._id}>
-                <div className="mx-24 my-10 flex flex-col items-center space-y-4 bg-slate-300 py-5 rounded-lg">
+                <div className="md:mx-16 mx-9 px-4 my-10 flex flex-col items-center space-y-4 bg-slate-300 py-5 rounded-lg">
                   <Rating style={{ maxWidth: 180 }} value={reviews.rating} readOnly />
                   <IoMdQuote className="font-bold text-6xl"/>
                   <p>{reviews.details}</p>
