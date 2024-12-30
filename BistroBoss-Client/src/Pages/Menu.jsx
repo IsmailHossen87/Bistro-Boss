@@ -12,6 +12,7 @@ import MenuCategory from '../Components/MenuCategory';
 
 const Menu = () => {
     const {menu}= UseMenu()
+    console.log(menu)
     const dissert = menu?.filter (diss => diss.category === 'dessert')
     const pizza = menu?.filter (diss => diss.category === 'pizza')
     const salad = menu?.filter (diss => diss.category === 'salad')
@@ -27,11 +28,11 @@ const Menu = () => {
            <Title heading='Dont miss' subtitle='Todays Offer'></Title>
            <MenuCategory item={offered}></MenuCategory>
            {/* dissert */}
-           <MenuCategory item={dissert} img={dissestImage} title='DESSERTS' subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
+           <MenuCategory item={dissert} img={dissestImage} title='dessert' subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
            {/* pizza */}
-           <MenuCategory item={pizza} img={PizzaImage} title='Pizza' subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
+           <MenuCategory item={pizza} img={PizzaImage} title='pizza' subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
            {/* soup */}
-           <MenuCategory item={soup} img={SoupImage} title='Soup' subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
+           <MenuCategory item={soup} img={SoupImage} title='soup' subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
         </div>
     );
 };

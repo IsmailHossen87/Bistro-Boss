@@ -1,15 +1,21 @@
 import orderImage from "../assets/shop/banner2.jpg";
-import FoodCard from "../Components/FoodCard";
 import UseMenu from "../Hooks/UseMenu";
 import Cover from "../Shared/Cover";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import OrderTab from "../Shared/OrderTab";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Order = () => {
-    const {menu} = UseMenu()
+    const categorys = ['salad','pizza','soup','dessert','drinks']
     const {category} = useParams()
+    const initialIndex = categorys.indexOf(category)
+    const [tabIndex, setTabIndex] = useState(initialIndex);
+
+    const {menu} = UseMenu()
+
+    // const {category} = useParams()
     const dissert = menu?.filter (diss => diss.category === 'dessert')
     const pizza = menu?.filter (diss => diss.category === 'pizza')
     const salad = menu?.filter (diss => diss.category === 'salad')
@@ -24,10 +30,11 @@ const Order = () => {
       ></Cover>
 
       <div>
-        <Tabs className='my-10'>
+      
+        <Tabs className='mt-10' defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList className='text-center'>
             <Tab>SALAD</Tab>
-            <Tab>PIZZAQ</Tab>
+            <Tab>PIZZA</Tab>
             <Tab>SOUP</Tab>
             <Tab>DESSETRS</Tab>
             <Tab>DRINKS</Tab>
