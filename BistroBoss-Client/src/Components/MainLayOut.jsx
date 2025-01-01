@@ -1,14 +1,16 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../Shared/Footer';
 import Navbar from '../Shared/Navbar';
 
 const MainLayOut = () => {
+    const location = useLocation()
+    const noheaderFooter = location.pathname.includes('login') || location.pathname.includes('register')
     return (
         <div className='container mx-auto'>
-            <Navbar></Navbar>
+           {noheaderFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
-            <Footer></Footer>
+            {noheaderFooter || <Footer></Footer>}
         </div>
     );
 };
