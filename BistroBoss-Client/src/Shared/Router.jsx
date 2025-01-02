@@ -25,6 +25,10 @@ const Router = createBrowserRouter([
                 element:<Order></Order>
             },
             {
+                path:'order',
+                element:<Order></Order>
+            },
+            {
                 path:'login',
                 element:<Login></Login>
             },

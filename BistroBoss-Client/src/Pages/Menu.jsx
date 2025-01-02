@@ -12,7 +12,6 @@ import MenuCategory from '../Components/MenuCategory';
 
 const Menu = () => {
     const {menu}= UseMenu()
-    console.log(menu)
     const dissert = menu?.filter (diss => diss.category === 'dessert')
     const pizza = menu?.filter (diss => diss.category === 'pizza')
     const salad = menu?.filter (diss => diss.category === 'salad')

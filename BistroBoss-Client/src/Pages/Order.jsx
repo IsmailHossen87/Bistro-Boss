@@ -6,6 +6,7 @@ import "react-tabs/style/react-tabs.css";
 import OrderTab from "../Shared/OrderTab";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import FoodCard from "../Components/FoodCard";
 
 const Order = () => {
     const categorys = ['salad','pizza','soup','dessert','drinks']
@@ -39,7 +40,8 @@ const Order = () => {
             <Tab>DESSETRS</Tab>
             <Tab>DRINKS</Tab>
           </TabList>
-
+          
+          
           <TabPanel >
            <OrderTab category={salad}></OrderTab>
           </TabPanel>
