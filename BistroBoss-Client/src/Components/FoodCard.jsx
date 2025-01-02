@@ -4,13 +4,16 @@ import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import UseAxiosSecure from '../Hooks/UseAxiosSecure';
 import axios from 'axios';
+import useCard from '../Hooks/useCard';
 
 const FoodCard = ({item}) => {
+
     const {image,name,recipe,price} =item
     const {user}= UseAuth()
     const navigate = useNavigate()
     const location = useLocation()
     const axiosSecure = UseAxiosSecure()
+    const [,refetch]= useCard()
     const handleClick = (item)=>{
       if(user && user.email){
         const cartItem = {
@@ -23,7 +26,9 @@ const FoodCard = ({item}) => {
         axiosSecure.post('/carts',cartItem)
         .then(res=>{
           Swal.fire("Good job!", "You added to cart", "success");
+          refetch()
         })
+        
       }else{  
         Swal.fire({
           title: "You are not login?",
