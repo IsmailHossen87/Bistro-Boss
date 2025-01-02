@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import { Authcontext } from "../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Register = () => {
   // const navigate = useNavigate();
@@ -13,16 +14,18 @@ const Register = () => {
   const {register, handleSubmit,reset, formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log('hello')
+  const onSubmit =async (data) => {
+    const file = data.photo[0]
+    const formData = new FormData()
+    formData.append("image", file)
+    
+    const photo =await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_APIKEY_IMGBB}`, formData)
+    const photoUrl = photo.data.data.display_url
+
+
     loginByemail(data.email, data.password)
     .then((response)=>{
-     console.log("User created successfully")
-    })
-// for validation end
-
-
-    updateUser(data.name, data.photo)
+    updateUser(data.name, photoUrl)
     .then((response)=>{ 
       console.log("User updated successfully")
       reset()
@@ -34,6 +37,8 @@ const Register = () => {
       });
       navigate("/")
     })
+    })
+   
   };
   const handleGoogle = () => {  
     googleLogin()
@@ -76,7 +81,7 @@ const Register = () => {
                   <span className="label-text">Photo URL</span>
                 </label>
                 <input
-                  type="text"
+                  type="file"
                   name="photo"
                   {...register("photo", { required: true })}
                   placeholder="Photo "

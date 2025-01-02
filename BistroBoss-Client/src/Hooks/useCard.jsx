@@ -5,15 +5,14 @@ import UseAuth from './UseAuth';
 const useCard = () => {
     const axiosSecure = UseAxiosSecure();
     const {user} = UseAuth();
-    const {refetch,data: cart =[]} = useQuery({
-        querykey: ['carts',user?.email],
+    const {refetch,isLoading,isPending,data: cart =[]} = useQuery({
+        queryKey: ['carts',user?.email],
         queryFn: async () => {
             const response = await axiosSecure.get(`/carts?email=${user?.email}`);
             return response.data;
-        }
-        
+        }   
     });
-    return [cart,refetch];
+    return [cart,refetch,isLoading,isPending];
 };
 
 export default useCard;

@@ -33,19 +33,27 @@ const Navbar = () => {
         <Link to="/register">Register</Link>{" "}
       </li>
       <li>
-        <Link to="/">
-        <button className="btn">
-        <FaCartShopping />
-          <div className="badge badge-secondary -mt-3">+{cart.length}</div>
-        </button>
+        <Link to="/deshboard/cart">
+          <button className="btn">
+            <FaCartShopping />
+            <div className="badge badge-secondary -mt-3">+{cart.length}</div>
+          </button>
         </Link>{" "}
       </li>
-     
+
       {user ? (
         <>
-          <button onClick={handleLogOut} className="btn btn-ghost">
-            LogOut
-          </button>
+          <div className="flex items-center space-x-4">
+            <img
+              src={user.photoURL}
+              referrerPolicy="no-referrer"
+              alt="User Avatar"
+              className="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <button onClick={handleLogOut} className="btn btn-ghost">
+              LogOut
+            </button>
+          </div>
         </>
       ) : (
         <>
